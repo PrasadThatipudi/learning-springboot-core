@@ -17,6 +17,8 @@ public class BookingService {
         this.bookingRepository = bookingRepository;
     }
 
+
+
     public void bookTicket(String user, String from, String to) {
         System.out.println("BookingService: booking ticket for " + user + " from " + from + " to " + to);
         // Simulate user validation or fetching user details

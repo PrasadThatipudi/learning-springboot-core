@@ -9,4 +9,8 @@ public class CancellationService {
         System.out.println("CancellationService: cancelling booking " + bookingId);
         // In a real app, would interact with BookingService/Repository
     }
+
+    public BookingService getBookingService() {
+        return bookingService;
+    }
 }
