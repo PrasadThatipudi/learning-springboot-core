@@ -1,7 +1,9 @@
 package org.learning.irctc.service;
 
+import org.learning.di.annotation.Component;
 import org.learning.irctc.repository.UserRepository;
 
+@Component
 public class UserService {
     private final UserRepository userRepository;
 

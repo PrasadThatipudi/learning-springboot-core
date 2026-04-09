@@ -5,17 +5,15 @@ import org.learning.irctc.service.*;
 
 public class IRCTCApplication {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ApplicationContext();
-        BookingService bookingService = applicationContext.get(BookingService.class);
-        CancellationService cancellationService = applicationContext.get(CancellationService.class);
+        ApplicationContext applicationContext = ApplicationContext.getInstance();
+        CancellationService cancellationService = applicationContext.getBean(CancellationService.class);
 
-        if (bookingService.equals(cancellationService.getBookingService())) {
-            System.out.println("Same booking service instance created");
+        System.out.println("======================================================================");
+        if (cancellationService == null) {
+            System.out.println("Cancellation service bean not found in the application context.");
         } else {
-            System.out.println("Different booking service instance created");
+            System.out.println("Cancellation service bean found in the application context.");
         }
-
-//        bookingService.bookTicket("user1", "Delhi", "Mumbai");
-//        cancellationService.cancelTicket(123);
+        System.out.println("======================================================================");
     }
 }

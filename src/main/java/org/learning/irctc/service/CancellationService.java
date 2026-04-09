@@ -1,5 +1,8 @@
 package org.learning.irctc.service;
 
+import org.learning.di.annotation.Component;
+
+@Component
 public class CancellationService {
     private final BookingService bookingService;
     public CancellationService(BookingService bookingService) {
