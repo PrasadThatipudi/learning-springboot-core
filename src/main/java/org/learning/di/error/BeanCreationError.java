@@ -1,5 +1,7 @@
 package org.learning.di.error;
 
+import java.util.List;
+
 public class BeanCreationError extends RuntimeException {
     public BeanCreationError(String message) {
         super(message);
@@ -13,6 +15,11 @@ public class BeanCreationError extends RuntimeException {
 
     public static <T> BeanCreationError noImplementationFound(Class<T> clz) {
         String message = "No implementation found for " + clz.getName();
+        return new BeanCreationError(message);
+    }
+
+    public static BeanCreationError multiplePrimaryBeansFound(List<Class<?>> primaryClasses) {
+        String message = "Multiple primary beans found: " + primaryClasses;
         return new BeanCreationError(message);
     }
 }
